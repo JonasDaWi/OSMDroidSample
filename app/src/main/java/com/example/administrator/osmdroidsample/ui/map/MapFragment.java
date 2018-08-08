@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 
 
 import com.example.administrator.osmdroidsample.MyLocationProvider;
+import com.example.administrator.osmdroidsample.MyMapTileProviderBasic;
 import com.example.administrator.osmdroidsample.R;
 
 import org.osmdroid.api.IMapController;
@@ -67,7 +68,7 @@ public class MapFragment extends Fragment {
 
         Configuration.getInstance().setOsmdroidBasePath(new File(getContext().getFilesDir() + File.separator + "osmdroid"));
         Configuration.getInstance().setOsmdroidTileCache(new File(getContext().getCacheDir() + File.separator + "osmdroid" + File.separator + "tiles"));
-        Configuration.getInstance().setDebugMode(true);
+        Configuration.getInstance().setDebugMode(false);
 
 
         final ITileSource mapTileSource = new XYTileSource("4uMaps", 13, 15, 256, ".png", new String[]{""});
@@ -97,7 +98,7 @@ public class MapFragment extends Fragment {
                             new MapTileModuleProviderBase[]{archiveProvider}));
                 } else {
                     Log.d("db", "using MapTileProviderBasic");
-                    mMapView.setTileProvider(new MapTileProviderBasic(getContext(), mapTileSource) );
+                    mMapView.setTileProvider(new MyMapTileProviderBasic(getContext(), mapTileSource) );
                 }
             }
         });

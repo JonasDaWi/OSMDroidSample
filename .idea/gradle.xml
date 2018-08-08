@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/osmdroid-android-6.0.3-SNAPSHOT-release" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
