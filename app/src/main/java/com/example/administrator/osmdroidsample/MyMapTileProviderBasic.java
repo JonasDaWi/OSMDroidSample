@@ -63,13 +63,7 @@ import org.osmdroid.util.MapTileListZoomComputer;
                     pTileSource, pContext,null);
         }
 
-        /**
-         * Creates a {@link org.osmdroid.tileprovider.MapTileProviderBasic}.
-         */
-        public MyMapTileProviderBasic(final Context pContext, final ITileSource pTileSource, final IFilesystemCache cacheWriter) {
-            this(new SimpleRegisterReceiver(pContext), new NetworkAvailabliltyCheck(pContext),
-                    pTileSource, pContext,cacheWriter);
-        }
+
 
         /**
          * Creates a {@link org.osmdroid.tileprovider.MapTileProviderBasic}.
@@ -96,6 +90,7 @@ import org.osmdroid.util.MapTileListZoomComputer;
                     aNetworkAvailablityCheck);
             mTileProviderList.add(downloaderProvider);*/
 
+            // TODO: comment out to get a better performance
             // protected-cache-tile computers
             getTileCache().getProtectedTileComputers().add(new MapTileListZoomComputer(-1));
             getTileCache().getProtectedTileComputers().add(new MapTileListZoomComputer(1));
